@@ -30,13 +30,13 @@ int main() {
 		PORTC = 0b11011111;
 		PORTD = 0xff;
 		
-		mydelay(delay);
+		mydelay(1024-delay);
 		
 		PORTB = 0x00;
 		PORTC = 0x00;
 		PORTD = 0x00;
 
-		mydelay(1024-delay);
+		mydelay(delay);
 
 		delay = lookup[ADC_result()/3];
 	}

@@ -7,6 +7,9 @@ all: main.o
 	avr-objcopy -O ihex -R .eeprom firmware firmware.hex
 	avr-size --mcu=atmega168 -C firmware
 
+clean:
+	rm firmware.hex main.o
+
 flash:
 	avrdude -c usbasp -p atmega168 -U firmware.hex
 
